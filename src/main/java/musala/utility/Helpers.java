@@ -1,10 +1,13 @@
 package musala.utility;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -12,12 +15,12 @@ import org.openqa.selenium.TakesScreenshot;
 public class Helpers {
 
 	public static boolean verifyURL(String url) {
-		return BrowserFactory.getBrowser(Constant.BrowserType).getCurrentUrl().equals(url);
+		return getDriver().getCurrentUrl().equals(url);
 	}
 
 	public static void switchTo(String title) {
-		for (String window : BrowserFactory.getBrowser(Constant.BrowserType).getWindowHandles()) {
-			String currentTitle = BrowserFactory.getBrowser(Constant.BrowserType).switchTo().window(window).getTitle(); 
+		for (String window : getDriver().getWindowHandles()) {
+			String currentTitle = getDriver().switchTo().window(window).getTitle(); 
 			if (currentTitle.equals(title))
 				return;
 		}
@@ -27,5 +30,14 @@ public class Helpers {
 		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(screenshotFile,
 				new File(Paths.get("").toAbsolutePath().toString() + "\\Screenshots\\Screenshot_" + name + ".jpg"));
+	}
+	
+	public static void ClickByJavascript(WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor)getDriver();
+		js.executeScript("arguments[0].click()", element);
+	}
+	
+	private static WebDriver getDriver() {
+		return BrowserFactory.getBrowser(Constant.BrowserType);
 	}
 }

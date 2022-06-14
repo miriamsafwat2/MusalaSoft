@@ -34,33 +34,28 @@ public class HomePage extends Page {
 			lnk_AcceptCookies.click();
 			Thread.sleep(4000);
 		}
-
 		btn_ContactUs.click();
 	}
 
 	public void navigateToCompany() throws InterruptedException {
 		getDriver().get(Constant.URL);
-
 		Thread.sleep(8000);
 
 		if (lnk_AcceptCookies.isDisplayed()) {
 			lnk_AcceptCookies.click();
 			Thread.sleep(4000);
 		}
-
 		lnk_Company.click();
 	}
 	
 	public void navigateToCareers() throws InterruptedException {
 		getDriver().get(Constant.URL);
-
 		Thread.sleep(8000);
 
 		if (lnk_AcceptCookies.isDisplayed()) {
 			lnk_AcceptCookies.click();
 			Thread.sleep(4000);
 		}
-
 		lnk_Careers.click();
 	}
 }

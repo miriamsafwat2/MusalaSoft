@@ -16,8 +16,6 @@ public class CompanyPage extends Page {
 	@FindBy(xpath = "//footer//a[contains(@href,'facebook')]")
 	WebElement lnk_Facebook;
 	
-	
-	
 	// *********** Methods ***********
 	
 	public boolean verifyLeadershipSection() {

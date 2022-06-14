@@ -9,7 +9,7 @@ public class FacebookPage extends Page {
 		super();
 	}
 	
-	@FindBy(xpath = "//*[@id='mount_0_0_W2']//div/svg/g/image")
+	@FindBy(xpath = "//div[@class=\"k4urcfbm\"]//div[@class=\"q9uorilb l9j0dhe7 pzggbiyp du4w35lb\"]/*[name()='svg']/*[name()='g']/*[name()='image']")
 	WebElement img_ProfilePicture;
 	
 	public boolean verifyProfilePicture() {

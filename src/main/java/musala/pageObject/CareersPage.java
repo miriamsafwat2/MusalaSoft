@@ -1,10 +1,11 @@
 package musala.pageObject;
 
 import java.util.*;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+
+import musala.utility.Helpers;
 
 public class CareersPage extends Page {
 
@@ -73,8 +74,7 @@ public class CareersPage extends Page {
 	}
 	
 	public void apply() {
-		JavascriptExecutor js = (JavascriptExecutor)getDriver();
-		js.executeScript("arguments[0].click()", btn_Apply);
+		Helpers.ClickByJavascript(btn_Apply);
 	}
 
 	public void printAllJobs() {
