@@ -2,7 +2,6 @@ package musala.pageObject;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import musala.utility.Helpers;
 
 public class CompanyPage extends Page {

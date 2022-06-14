@@ -1,8 +1,6 @@
 package musala.pageObject;
 
 import java.util.*;
-
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
