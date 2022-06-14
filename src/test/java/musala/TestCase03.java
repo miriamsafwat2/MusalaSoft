@@ -30,7 +30,7 @@ public class TestCase03 {
 		careersPage.apply();
 		
 		ApplyPage applyPage = new ApplyPage();
-		applyPage.fillForm("my name", "wrong@mail", "", "C:\\Users\\miria\\OneDrive\\Desktop\\My Folder\\Interviews\\Musala\\Test Automation\\Musala Soft Test Automation Task - 12.2021.pdf");
+		applyPage.fillForm("my name", "wrong@mail", "", "[Enter CV path here]");
 		applyPage.submitForm();
 		String errorMessage = applyPage.getErrorMessage();
 		System.out.println(errorMessage);

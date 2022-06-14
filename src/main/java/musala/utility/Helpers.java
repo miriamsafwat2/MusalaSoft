@@ -28,9 +28,4 @@ public class Helpers {
 		FileUtils.copyFile(screenshotFile,
 				new File(Paths.get("").toAbsolutePath().toString() + "\\Screenshots\\Screenshot_" + name + ".jpg"));
 	}
-
-	public static void ExplicitWait(WebDriver driver, String text) {
-
-	}
-
 }
