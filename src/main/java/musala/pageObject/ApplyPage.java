@@ -1,11 +1,8 @@
 package musala.pageObject;
 
-import java.time.Duration;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import musala.utility.Helpers;
+import musala.utility.Actions;
 
 public class ApplyPage extends Page {
 	
@@ -37,20 +34,18 @@ public class ApplyPage extends Page {
 	// *********** Methods **************
 	
 	public void fillForm(String name, String email, String mobile, String cvPath) {
+		Actions.waitUntilVisible(txt_Name);
 		
-		WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofMillis(10000));
-		wait.until(ExpectedConditions.visibilityOf(txt_Name));
+		Actions.type(txt_Name, name);
+		Actions.type(txt_Email, email);
+		Actions.type(txt_Mobile, mobile);
+		Actions.type(txt_UploadCV, cvPath);
 		
-		txt_Name.sendKeys(name);
-		txt_Email.sendKeys(email);
-		txt_Mobile.sendKeys(mobile);
-		txt_UploadCV.sendKeys(cvPath);
-		
-		Helpers.ClickByJavascript(chx_Consent);
+		Actions.clickByJavascript(chx_Consent);
 	}
 	
 	public void submitForm() {
-		Helpers.ClickByJavascript(btn_Send);
+		Actions.clickByJavascript(btn_Send);
 	}
 	
 	public String getErrorMessage() {

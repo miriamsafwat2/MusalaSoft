@@ -3,8 +3,7 @@ package musala.pageObject;
 import java.util.*;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
-import musala.utility.Helpers;
+import musala.utility.Actions;
 
 public class CareersPage extends Page {
 
@@ -48,16 +47,15 @@ public class CareersPage extends Page {
 	// *********** Methods **************
 	
 	public void checkOpenPositions() {
-		btn_CheckOpenPositions.click();
+		Actions.click(btn_CheckOpenPositions);
 	}
 	
 	public void selectLocation(String selection) {
-		Select getLocation = new Select(select_GetLocation);
-		getLocation.selectByVisibleText(selection);
+		Actions.selectByText(select_GetLocation, selection);
 	}
 	
 	public void chooseQA() {
-		img_AutomationEngineer.click();
+		Actions.click(img_AutomationEngineer);
 	}
 
 	public boolean verifyMainSectionsExist() {
@@ -73,7 +71,7 @@ public class CareersPage extends Page {
 	}
 	
 	public void apply() {
-		Helpers.ClickByJavascript(btn_Apply);
+		Actions.clickByJavascript(btn_Apply);
 	}
 
 	public void printAllJobs() {

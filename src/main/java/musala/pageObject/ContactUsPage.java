@@ -3,6 +3,8 @@ package musala.pageObject;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import musala.utility.Actions;
+
 public class ContactUsPage extends Page {
 	
 	public ContactUsPage() {
@@ -33,15 +35,15 @@ public class ContactUsPage extends Page {
 	// *********** Methods ***********
 
 	public void fillTheForm(String name, String email, String msg, String subject, String mobile) {
-		txt_Name.sendKeys(name);
-		txt_Email.sendKeys(email);
-		txt_Message.sendKeys(msg);
-		txt_Subject.sendKeys(subject);
-		txt_Mobile.sendKeys(mobile);
+		Actions.type(txt_Name, name);
+		Actions.type(txt_Email, email);
+		Actions.type(txt_Message, msg);
+		Actions.type(txt_Subject, subject);
+		Actions.type(txt_Mobile, mobile);
 	}
 
 	public void submit() {
-		btn_Submit.click();
+		Actions.click(btn_Submit);
 	}
 
 	public String getErrorMessage() {

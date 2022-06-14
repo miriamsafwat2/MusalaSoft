@@ -2,7 +2,7 @@ package musala.pageObject;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import musala.utility.Helpers;
+import musala.utility.Actions;
 
 public class CompanyPage extends Page {
 	
@@ -25,7 +25,7 @@ public class CompanyPage extends Page {
 	}
 
 	public void clickFacebookLink() {
-		lnk_Facebook.click();
-		Helpers.switchTo("Musala Soft - Home | Facebook");
+		Actions.click(lnk_Facebook);
+		Actions.switchTo("Musala Soft - Home | Facebook");
 	}
 }
