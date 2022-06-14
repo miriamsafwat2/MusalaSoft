@@ -34,6 +34,5 @@ public class TestCase03 {
 		applyPage.submitForm();
 		String errorMessage = applyPage.getErrorMessage();
 		System.out.println(errorMessage);
-		
 	}
 }

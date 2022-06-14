@@ -4,7 +4,6 @@ import java.util.*;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
-
 import musala.utility.Helpers;
 
 public class CareersPage extends Page {
