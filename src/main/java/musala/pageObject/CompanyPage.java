@@ -19,9 +19,7 @@ public class CompanyPage extends Page {
 	// *********** Methods ***********
 	
 	public boolean verifyLeadershipSection() {
-		if(lbl_Leadership.isDisplayed())
-			return true;
-		return false;
+		return lbl_Leadership.isDisplayed();
 	}
 
 	public void clickFacebookLink() {
