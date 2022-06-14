@@ -10,6 +10,11 @@ import musala.utility.Helpers;
 public class TestCase03 {
 	@Test
 	public void testCase03() throws InterruptedException {
+		applyInQACareer("Anywhere");
+		submitForm();
+	}
+
+	private void applyInQACareer(String location) throws InterruptedException {
 		HomePage homePage = new HomePage();
 		homePage.navigateToCareers();
 		
@@ -20,7 +25,7 @@ public class TestCase03 {
 		boolean isVerified = Helpers.verifyURL("https://www.musala.com/careers/join-us/");
 		assert(isVerified);
 		
-		careersPage.selectLocation("Anywhere");
+		careersPage.selectLocation(location);
 		careersPage.chooseQA();
 		
 		isVerified = careersPage.verifyMainSectionsExist();
@@ -28,7 +33,9 @@ public class TestCase03 {
 		
 		Thread.sleep(3000);
 		careersPage.apply();
-		
+	}
+
+	private void submitForm() {
 		ApplyPage applyPage = new ApplyPage();
 		applyPage.fillForm("my name", "wrong@mail", "", "[Enter CV path here]");
 		applyPage.submitForm();
