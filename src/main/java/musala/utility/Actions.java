@@ -11,10 +11,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Actions {
 	
 	public static void type(WebElement element, String text) {
+		waitUntilVisible(element);
 		element.sendKeys(text);
 	}
 	
 	public static void click(WebElement element) {
+		waitUntilVisible(element);
 		element.click();
 	}
 	
