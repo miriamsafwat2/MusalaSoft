@@ -6,21 +6,25 @@ import musala.pageObject.CareersPage;
 import musala.pageObject.HomePage;
 
 public class TestCase04 {
+	
+	HomePage homePage;
+	CareersPage careersPage;
+	
 	@Test
 	public void testCase04() throws InterruptedException {
-		HomePage homePage = new HomePage();
+		homePage = new HomePage();
 		homePage.navigateToCareers();
 		
-		CareersPage careersPage = new CareersPage();
+		careersPage = new CareersPage();
 		careersPage.checkOpenPositions();
 		
 		Thread.sleep(3000);
 		System.out.println("Filters by cities excluding 'Anywhere'");
-		filterCareersByCity(careersPage, "Sofia");
-		filterCareersByCity(careersPage, "Skopje");
+		filterCareersByCity("Sofia");
+		filterCareersByCity("Skopje");
 	}
 
-	private void filterCareersByCity(CareersPage careersPage, String cityName) throws InterruptedException {
+	private void filterCareersByCity(String cityName) throws InterruptedException {
 		careersPage.selectLocation(cityName);
 		Thread.sleep(3000);
 		System.out.println(cityName);
